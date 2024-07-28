@@ -1,0 +1,493 @@
+
+/* ESTILO GERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #000000;
+    height: 100vh;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #9426f5;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button:hover {
+    box-shadow: 0px 0px 5px #cda9f477;
+    transform: scale(1.05);
+}
+
+h2.titulo {
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: #b168fe;
+}
+
+/* ESTILO DO CABEÇALHO */
+
+/* header {
+    padding: 0px 4%;
+} */
+
+/* ESTILO DO CABEÇALHO */
+header {
+    padding: 0px 4%;
+    position: fixed; /* Adicionado para tornar o cabeçalho fixo */
+    top: 0; /* Fixar o cabeçalho no topo da página */
+    width: 100%; /* Garantir que o cabeçalho ocupe a largura total da página */
+    z-index: 1000; /* Garantir que o cabeçalho fique acima de outros elementos */
+    background-color: #000; /* Adicionado para definir a cor de fundo do cabeçalho */
+}
+
+/* Adicione um preenchimento superior ao conteúdo principal para compensar a altura do cabeçalho */
+main {
+    padding-top: 160px; /* Ajuste conforme necessário */
+}
+
+
+
+
+/* CLASSE INTERFACE DENTRO DO HEADER */
+
+header > .interface{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+}
+
+header a {
+    color: #8a8a8a;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    transition: .2s;
+}
+
+header a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+/* TEXTO ANIMADO */
+
+.txt-animado {
+    font-size: 25px;
+    font-weight: 300;
+    color: #fff;
+    width: 500px; 
+}
+
+.txt-animado span {
+    position: relative;
+}
+
+.txt-animado span::before{
+    content: "";
+    color: #b168fe;
+    animation: palavras 23s infinite;
+}
+
+.txt-animado span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid #b168fe;
+    right: -13px;
+    animation: cursor .8s infinite, digita 23s steps(16) infinite;
+    width: calc(100% + 18px);
+    background-color: #000000;
+}
+
+@keyframes digita {
+    10%,15%, 30%, 35%, 50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 18px);
+    } 
+
+}
+
+@keyframes cursor {
+    0%{
+        border-left: 2px solid #000000;
+    }
+}
+
+@keyframes palavras {
+    0%, 20%{
+        content: "estudante de ciência da computação";
+    }
+    21%,40%{
+        content: "curiosa e apaixonada por desafios";
+    }
+    41%,60%{
+        content: "em busca de novos conhecimentos";
+    }
+    61%,80%{
+        content: "apaixonada por tecnologia e inovação";
+    }
+    81%,100%{
+        content: "buscando impacto na área de TI";
+    }
+} 
+
+
+/* ESTILO DO TOPO DO SITE*/
+
+section.topo-do-site{
+    padding: 80px 4%; 
+} 
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.topo-do-site .btn-contato {
+    padding-top: 25px;
+}
+
+.topo-do-site .img-topo-site {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 15px;
+    }
+    
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades{
+    padding: 130px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box{
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades .especialidades-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ba82fb74;
+}
+
+.especialidades .especialidades-box i{
+    font-size: 70px;
+    color: #c8a4ee;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.especialidades p{
+    text-align: justify;
+}
+
+/* ESTILO DO SOBRE */
+
+section.sobre{
+    /* padding: 80px 4%; */
+    padding: 140px 4%;
+}
+
+section.sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .img-sobre img{
+    border-radius: 60px;
+    width: 500px;
+}
+
+.sobre .txt-sobre{
+    color: #fff;
+}
+
+.sobre .txt-sobre h2{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span{
+    color: #b168fe;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.sobre .txt-sobre .btn-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #b168fe;
+    font-size: 28px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+/* ESTILO DO PORTIFÓLIO */
+section.portifolio {
+    /* padding: 80px 4%; */
+    padding: 130px 4%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+section.portifolio .flex {
+    justify-content: space-around;
+}
+
+/* .img-port{
+    width: 360px;
+    height: 220px;
+    transform: scale(1);
+    background-size: cover;
+    background-position: 100% 0%;
+} */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    padding: 20px 4%;
+}
+
+.card {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+    box-shadow: 0 0 20px #9426f568; 
+    border-radius: 30px;
+    transition: 400ms;
+
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* OVERLAY */
+
+.card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: 5px;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+
+/* Botões do overlay */
+.overlay .btn-social {
+    display: flex;
+    gap: 10px;
+}
+
+.overlay .btn-social button {
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: 600;
+    background-color: #9426f5d2;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #fff;
+    text-decoration: none;
+}
+
+.overlay .btn-social button:hover {
+    box-shadow: 0px 0px 5px #cda9f477;
+    transform: scale(1.05);
+}
+
+/* static */
+
+.card-static{
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+    box-shadow: 0 0 20px #9426f568; 
+    border-radius: 30px;
+    transition: 400ms;
+}
+
+.card-static h2 {
+    color: #b168fe;
+    margin-top: 10px;
+}
+
+.card-static p {
+    margin: 10px 0;
+    color: #e2ccfa;
+}
+
+.portifolio .card-static .btn-social button{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: #b068fedf;
+    font-size: 28px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+/* normal */
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card h2 {
+    color: #b168fe;
+    margin-top: 10px;
+}
+
+.card p {
+    margin: 10px 0;
+    color: #e2ccfa;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ESTILO DO CERTIFICACOES */
+
+section.certificacoes{
+    padding: 20px 4%;
+}
+
+
+
+/* ESTILO DO RODAPÉ */
+
+footer{
+    padding: 40px 4%;
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer{
+    padding: 10px 0;
+}
+
+.borda{
+    border-top: 2px solid #c8a4ee;
+}
+
+footer .btn-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #b168fe;
+    font-size: 28px;
+    cursor: pointer;
+    margin: 100px 5px;
+    transition: .2s;
+
+}
+
+footer .line-footer p i{
+    color: #c8a4ee;
+    padding: 0px 10px;
+    font-size: 30px;
+}
+
+footer .line-footer p a{
+    color: #c8a4ee;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 100px 5px;
+}
+
+footer .email {
+    padding: 100px 4%;
+}
+
